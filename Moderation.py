@@ -905,29 +905,7 @@ class Admin_Commands(commands.Cog):
             return
 
 
-    @commands.command()
-    async def dm(self, ctx, user: discord.Member, *, message=None):
-        AZU = [273255595509809162, 773695202136686612]
-        for uz in AZU:
-            if ctx.author.id in AZU:
-                await ctx.channel.purge(limit=1)
-
-                embed = discord.Embed(
-                        description=message,
-                        colour=discord.Color.random()
-                    )
-
-                channel = await user.create_dm()
-                await channel.send(embed=embed)
-                channel = client.get_channel(699655178818814013)
-                embed = discord.Embed(
-                        title='Direct Message Log',
-                        description=f'Message: `{message}`\nAuthor: `{ctx.author}`\nRecipient: `{user}`',
-                        color=discord.Colour.random()
-                    )
-                await channel.send(embed=embed)
-            else:
-                return
+    
 
 
 
